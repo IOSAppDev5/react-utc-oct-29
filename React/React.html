@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    </head>
+
+    <body>
+        <h2>React Application</h2>
+
+        <div id="app1"></div>
+        <div id="app2"></div>
+        <div id="app3"></div>
+
+        <script type="text/babel">
+            // <h3>This is a React Element</h3>
+            var element = React.createElement("h3", null, "This is a React Element");
+            // var element = React.createElement("h3", null, 
+            //                                         React.createElement("p", null, "This is a React Element"));
+            ReactDOM.render(element, document.getElementById("app1"));
+
+            //JSX
+            //<h3><p>Some Content</p></h3>
+            ReactDOM.render(<h3><p>React with JSX</p></h3>, document.getElementById("app2"));
+
+            //Component(Custom HTML Element)
+
+            var Hello = function(){
+                //return JSX
+                return (
+                    <h4>
+                        <p>This is React Component</p>
+                        <span>This uses JSX</span>
+                    </h4>
+                );
+            }
+            ReactDOM.render(<Hello/>, document.getElementById("app3"))
+
+
+        </script>
+    </body>
+</html>
